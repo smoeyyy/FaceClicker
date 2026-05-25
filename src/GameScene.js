@@ -33,7 +33,7 @@ class GameScene extends Phaser.Scene {
         const line2 = this.add.text(400, 310, 'Avoid frowning faces', { fontSize: '22px', color: '#000' }).setOrigin(0.5);
         const clickText = this.add.text(400, 400, 'Click to Start', { fontSize: '24px', color: '#666666' }).setOrigin(0.5);
 
-        const elements = [bg, title, line1, line2, line3, clickText];
+        const elements = [bg, title, line1, line2, clickText];
         this.input.once('pointerdown', () => {
             elements.forEach(e => e.destroy());
             this.showPauseScreen();
@@ -188,7 +188,7 @@ class GameScene extends Phaser.Scene {
             restartText.destroy();
             this.score = 0;
             this.currentRound = 0;
-            this.showPauseScreen();
+            this.showInstructions();
         });
     }
 }
